@@ -18,6 +18,7 @@
   imports = [
     ./git.nix
     ./hyprland.nix
+    ./kanshi.nix
     ./zsh.nix
     ./waybar.nix
     ./direnv.nix
