@@ -90,9 +90,11 @@
     #     tree
     #   ];
     initialPassword = "password";
+    shell = pkgs.zsh; # Set the default shell to Zsh.
   };
 
   programs.firefox.enable = true;
+  programs.zsh.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
@@ -109,6 +111,7 @@
     vscode
     nixfmt-rfc-style
     gnupg
+    devenv
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -178,6 +181,11 @@
     useUserPackages = true; # Use user packages in Home Manager.
     backupFileExtension = "bak"; # Backup extension for Home Manager files.
   };
+
+  nix.settings.trusted-users = [
+    "root"
+    "chxru"
+  ];
 
   nix.settings.experimental-features = [
     "nix-command"
